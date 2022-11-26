@@ -1,3 +1,22 @@
 <div class="custom-panel">
-    <p>Create Theory Works!</p>
+    <p>Create Theory!</p>
+    <small>Remeber to select a new label with anime, movie, serie...</small>
+</div>
+
+<div class="mt-3 custom-panel">
+    <div class="theory-form">
+        <div class="form-area">
+            <label for="theoryName">Theory Name</label>
+            <input type="name" name="theoryName" id="theoryName" [(ngModel)]="theory.name" required>
+        </div>
+        <div class="form-area">
+            <label for="theoryAuthor">Theory Author</label>
+            <input type="text" name="theoryAuthor" id="theoryAuthor" [(ngModel)]="theory.author" required>
+        </div>
+        <div class="form-area">
+            <label for="theoryDescription">Theory Author</label>
+            <input type="text" name="theoryDescription" id="theoryDescription" [(ngModel)]="theory.description" required>
+        </div>
+        <button class="btn btn-dark" (click)="showTheory()">Create</button>
+    </div>
 </div>
