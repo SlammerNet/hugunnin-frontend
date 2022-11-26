@@ -4,19 +4,24 @@
 </div>
 
 <div class="mt-3 custom-panel">
-    <div class="theory-form">
+    <form class="theory-form">
         <div class="form-area">
-            <label for="theoryName">Theory Name</label>
-            <input type="name" name="theoryName" id="theoryName" [(ngModel)]="theory.name" required>
+            <label for="theoryName" class="form-label">Theory Name</label>
+            <input type="name" name="theoryName" id="theoryName" [(ngModel)]="theory.name" required class="form-control">
         </div>
         <div class="form-area">
-            <label for="theoryAuthor">Theory Author</label>
-            <input type="text" name="theoryAuthor" id="theoryAuthor" [(ngModel)]="theory.author" required>
+            <label for="theoryAuthor" class="form-label">Theory Author</label>
+            <input type="text" name="theoryAuthor" id="theoryAuthor" [(ngModel)]="theory.author" required class="form-control">
         </div>
         <div class="form-area">
-            <label for="theoryDescription">Theory Author</label>
-            <input type="text" name="theoryDescription" id="theoryDescription" [(ngModel)]="theory.description" required>
+            <label for="theoryDescription" class="form-label">Theory Author</label>
+            <textarea rows="5" type="text" name="theoryDescription" id="theoryDescription" [(ngModel)]="theory.description" required class="form-control"></textarea>
         </div>
-        <button class="btn btn-dark" (click)="showTheory()">Create</button>
-    </div>
+        <div class="toolbar" role="toolbar">
+            <div class="btn-group">
+                <button class="mt-3 btn btn-dark" (click)="showTheory()">Create!</button>
+                <button class="mt-3 btn btn-danger" (click)="resetTheory()">Reset!</button>
+            </div>
+        </div>
+    </form>
 </div>

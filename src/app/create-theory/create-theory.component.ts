@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ITheory} from '../../app/interfaces/theory.interface'
 import * as moment from 'moment';
 
 @Component({
@@ -8,11 +9,12 @@ import * as moment from 'moment';
 })
 export class CreateTheoryComponent implements OnInit {
   
-  theory = {
+  theory: ITheory = {
     name: "",
     author: "",
     description: "",
     creationDate: moment().format('DD/MM/YYYY')
+
   }
 
   constructor() { }
@@ -25,5 +27,10 @@ export class CreateTheoryComponent implements OnInit {
     console.table(this.theory)
   }
 
-
+  resetTheory(){
+    var theory: ITheory
+    Object.keys(this.theory).forEach(element => this.theory[element as keyof typeof theory] = "");
+  }
 }
+
+
