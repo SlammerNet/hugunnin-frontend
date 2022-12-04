@@ -2,3 +2,8 @@
     background-color: rgb(92, 92, 92) !important;
     color: antiquewhite;
 }
+
+.sub-title{
+    font-size: small;
+    font-style: italic;
+}

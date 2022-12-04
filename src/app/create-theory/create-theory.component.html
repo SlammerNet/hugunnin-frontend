@@ -1,27 +1,45 @@
 <div class="custom-panel">
     <p>Create Theory!</p>
-    <small>Remeber to select a new label with anime, movie, serie...</small>
+    <div class="sub-title">
+        Create a new theory with name, author, description, production, and type production. Be creative!
+    </div>
 </div>
 
 <div class="mt-3 custom-panel">
-    <form class="theory-form">
-        <div class="form-area">
+    <div class="theory-form">
+        <div class="form-area mb-2">
             <label for="theoryName" class="form-label">Theory Name</label>
             <input type="name" name="theoryName" id="theoryName" [(ngModel)]="theory.name" required class="form-control">
         </div>
-        <div class="form-area">
+        <div class="form-area mb-2">
             <label for="theoryAuthor" class="form-label">Theory Author</label>
             <input type="text" name="theoryAuthor" id="theoryAuthor" [(ngModel)]="theory.author" required class="form-control">
         </div>
-        <div class="form-area">
-            <label for="theoryDescription" class="form-label">Theory Author</label>
+        <div class="form-area mb-2">
+            <label for="theoryDescription" class="form-label">Theory Description</label>
             <textarea rows="5" type="text" name="theoryDescription" id="theoryDescription" [(ngModel)]="theory.description" required class="form-control"></textarea>
+        </div>
+        <div class="form-area mb-2">
+            <label for="theoryProduction" class="form-label">Theory Production </label>
+            <select required class="form-control" required [(ngModel)]="theory.production">
+                <ng-template ngFor let-item [ngForOf]="productions" let-i="index">
+                    <option value="{{item.name}}">{{item.name}}</option>
+                </ng-template>
+            </select>
+        </div>
+        <div class="form-area mb-2">
+            <label for="theoryProductionType" class="form-label">Theory Production Type</label>
+            <select required class="form-control" required [(ngModel)]="theory.productionType">
+                <ng-template ngFor let-item [ngForOf]="productionsType" let-i="index">
+                    <option value="{{item.name}}">{{item.name}}</option>
+                </ng-template>
+            </select>
         </div>
         <div class="toolbar" role="toolbar">
             <div class="btn-group">
-                <button class="mt-3 btn btn-dark" (click)="showTheory()">Create!</button>
+                <button class="mt-3 btn btn-dark" (click)="createTheory()">Create!</button>
                 <button class="mt-3 btn btn-danger" (click)="resetTheory()">Reset!</button>
             </div>
         </div>
-    </form>
+    </div>
 </div>
